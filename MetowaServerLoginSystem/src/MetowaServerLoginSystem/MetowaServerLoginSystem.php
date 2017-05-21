@@ -221,7 +221,10 @@ class MetowaServerLoginSystem extends PluginBase implements Listener{
 					$sender->sendMessage(TextFormat::YELLOW."パスワードを入力してください。");
 					return true;
 				}
-				if($this->ac->get($name)["PASSWORD"] !== $args[0]){
+				$ac = $this->ac->get($name);
+				$unprotectedpassword = $this->ProtectedPasswordUnlocker($args[0]);
+				$unprotectedpassword2 = $this->ProtectedPasswordUnlocker($ac["PASSWORD"]);
+				if($unprotectedpassword !== $unprotectedpassword2){
 					$sender->sendMessage(TextFormat::YELLOW."パスワードが一致しません。");
 					return true;
 				}
@@ -235,7 +238,6 @@ class MetowaServerLoginSystem extends PluginBase implements Listener{
 					$sender->sendMessage(TextFormat::YELLOW."パスワードは、英数字のみです。");
 					return true;
 				}
-				$ac = $this->ac->get($name);
 				$unprotectedpassword = $this->ProtectedPasswordUnlocker($pass);
 				$unprotectedpassword2 = $this->ProtectedPasswordUnlocker($ac["PASSWORD"]);
 				if($unprotectedpassword == $unprotectedpassword2){
