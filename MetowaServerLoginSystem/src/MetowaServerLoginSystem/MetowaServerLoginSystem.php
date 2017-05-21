@@ -154,6 +154,14 @@ class MetowaServerLoginSystem extends PluginBase implements Listener{
 			}
 		}
 	}
+	
+	private function PasswordProtector($pass){
+		/**このコードは非公開です。**/
+	}
+	
+	private function ProtectedPasswordUnlocker($pass){
+		/**このコードは非公開です。**/
+	}
 
 	public function onCommand(CommandSender $sender, Command $command, $label, array $args){
 		$name = strtolower($sender->getName());
@@ -183,12 +191,13 @@ class MetowaServerLoginSystem extends PluginBase implements Listener{
 					return true;
 				}
 				$aname = $sender->getName();
+				$protectedpassword = $this->PasswordProtector($pass);
 				$this->ac->set($name, [
 					"IP" => gethostbyaddr($sender->getAddress()),
 					"CID" => $sender->getClientId(),
 					"NAME" => $name,
 					"PROTECTEDNAMEWITHALL" => $aname,
-					"PASSWORD" => $pass]);
+					"PASSWORD" => $protectedpassword]);
 				$this->ac->save();
 				$this->logged[$name] = true;
 				$this->register[$name] = null;
@@ -227,7 +236,9 @@ class MetowaServerLoginSystem extends PluginBase implements Listener{
 					return true;
 				}
 				$ac = $this->ac->get($name);
-				if($ac["PASSWORD"] == $pass){
+				$unprotectedpassword = $this->ProtectedPasswordUnlocker($pass);
+				$unprotectedpassword2 = $this->ProtectedPasswordUnlocker($ac["PASSWORD"]);
+				if($unprotectedpassword == $unprotectedpassword2){
 					$this->logged[$name] = true;
 					$sender->setDataFlag(Entity::DATA_FLAGS,Entity::DATA_FLAG_IMMOBILE,false);
 					$sender->sendMessage(TextFormat::GREEN."ログイン認証に成功しました。");
@@ -371,17 +382,20 @@ class MetowaServerLoginSystem extends PluginBase implements Listener{
 					return true;
 				}
 				$ac = $this->ac->get($name);
-				if($args[0] !== $ac["PASSWORD"]){
+				$unprotectedpassword = $this->ProtectedPasswordUnlocker($args[0]);
+				$unprotectedpassword2 = $this->ProtectedPasswordUnlocker($ac["PASSWORD"]);
+				if($unprotectedpassword !== $unprotectedpassword2){
 					$sender->sendMessage(TextFormat::YELLOW."現在のパスワードが一致しません。");
 					return true;
 				}
 				$add = $ac["IP"];
 				$cid = $ac["CID"];
+				$protectedpassword = $this->PasswordProtector($args[1]);
 				$this->ac->set($name, [
 					"IP" => $add,
 					"CID" => $cid,
 					"NAME" => $name,
-					"PASSWORD" => $args[1]]);
+					"PASSWORD" => $protectedpassword]);
 				$this->ac->save();
 				$sender->sendMessage(TextFormat::GREEN."アカウントのパスワードを変更しました。 新しいパスワード:<".$args[1].">");
 				return true;
@@ -414,7 +428,9 @@ class MetowaServerLoginSystem extends PluginBase implements Listener{
 					return true;
 				}
 				$ac = $this->ac->get($name);
-				if($args[0] !== $ac["PASSWORD"]){
+				$unprotectedpassword = $this->ProtectedPasswordUnlocker($args[0]);
+				$unprotectedpassword2 = $this->ProtectedPasswordUnlocker($ac["PASSWORD"]);
+				if($unprotectedpassword !== $unprotectedpassword2){
 					$sender->sendMessage(TextFormat::YELLOW."パスワードが一致しません。");
 					return true;
 				}
