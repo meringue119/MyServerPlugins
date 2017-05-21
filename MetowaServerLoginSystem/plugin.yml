@@ -1,0 +1,42 @@
+name: MetowaServerLoginSystem
+main: MetowaServerLoginSystem\MetowaServerLoginSystem
+version: 1.0.0
+api: 1.0.0
+author: metowa1227
+commands:
+  register:
+    description: アカウントを作成します。
+    usage: /register <pass>
+  login:
+    description: ログインをします。
+    usage: /login <pass>
+  passc:
+    description: パスワードを変更します。
+    usage: /passc <oldpass> <newpass>
+  nban:
+    description: ネームBANをします。
+    usage: /nban <player> <reason>
+  iban:
+    description: IPBANをします。
+    usage: /iban <player> <reason>
+  allban:
+    description: 永久追放します。
+    usage: /inban <player> <name>
+  unban:
+    description: ネームBANを解除します。
+    usage: /unban <player>
+  uiban:
+    description: IPBANを解除します。
+    usage: /uiban <player>
+  delac:
+    description: アカウントを削除します。
+    usage: /delac <Pass>
+  cban:
+    description: ClientIDBANをします。
+    usage: /cban <player>
+  ucban:
+    description: ClientIDBANを解除します。
+    usage: /ucban <player>
+  hub:
+    description: リスポーン地点にテレポートします。
+    usage: /hub
