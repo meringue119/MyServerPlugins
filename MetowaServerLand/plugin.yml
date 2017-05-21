@@ -1,0 +1,21 @@
+name: MetowaServerLand
+main: MetowaServerLand\MetowaServerLand
+version: 1.0.0
+author: metowa1227
+api: 1.0.0
+commands:
+  invite:
+    description: 土地を共有します。
+    usage: /invite <LandNumber> <player>
+  unvite:
+    description: 土地の共有を解除します。
+    usage: /unvite <LandNumber> <player>
+  sold:
+    description: 土地を消去します。
+    usage: /sold <LandNumber>
+  here:
+    description: 立っている場所の土地の詳細を確認します。
+    usage: /here
+  entry:
+    description: ENTRY SAVED POINT OF LAND AND POSITION OBJECT WITH CREATE ENTRY ACCOUNT
+    usage: /entry

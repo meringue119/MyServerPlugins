@@ -1,0 +1,16 @@
+---
+1:
+  EntryNumber: 1
+  StartX: 274
+  StartZ: 219
+  EndX: 262
+  EndZ: 211
+  Level: lifeworld(1)
+2:
+  EntryNumber: 2
+  StartX: 253
+  StartZ: 253
+  EndX: 259
+  EndZ: 259
+  Level: TestWorld
+...
