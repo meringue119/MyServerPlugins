@@ -1,0 +1,105 @@
+name: MoneySystemLand
+main: MoneySystemLand\MoneySystemLand
+version: "1.6.9"
+author: metowa1227
+load: STARTUP
+api: 1.0.0
+description: MoneySystemProtector
+commands:
+  land:
+    description: MoneySystemLand master command
+    usage: /land help
+    permission: command
+  startp:
+    description: 最初の位置を設定します。
+    usage: /startp
+    permission: default.command.startp
+  endp:
+    description: 次の位置を設定します。
+    usage: /endp
+    permission: default.command.endp
+  buystop:
+    description: 土地の購入手続きをキャンセルします。
+    usage: /buystop
+    permission: default.command.stop
+  buy:
+    description: 土地を購入します。
+    usage: /land buy
+    permission: default.command.buy
+  list:
+    description: サーバーにある土地を表示します。
+    usage: /land list <page>
+    permission: default.command.list
+  tp:
+    description: 土地を移動します
+    usage: /land tp <LandNumber>
+    permission: default.command.tp
+  help:
+    description: プラグインのヘルプ
+    usage: /land help <page>
+    permission: default.command.help
+  sell:
+    description: 土地を売却します。
+    usage: /land sell <LandNumber>
+    permission: default.command.sell
+  give:
+    description: 土地を譲渡します。
+    usage: /land give <LandNumber>
+    permission: default.command.give
+  mark:
+    description: 土地の範囲をマークアップします。
+    usage: /land mark <LandNumber>
+    permission: default.command.mark
+  unmark:
+    description: マークアップを解除します。
+    usage: /unmark <LandNumber>
+    permission: default.command.unmark
+  info:
+    description: プレイヤーの土地数などの情報を確認します。
+    usage: /land info <player>
+    permission: default.command.info
+  here:
+    description: 土地の情報を確認します。
+    usage: /land here
+    permission: default.command.here
+  buildroadstart:
+    description: 道路を登録します。
+    usage: /buildroadstart
+  buildroadend:
+    description: 道路を登録します。
+    usage: /buildroadend
+  setroadbuilder:
+    description: 道路建設者を登録します。
+    usage: /setroadbuilder
+  removeroadbuilder:
+    description: 道路建設者から除外します。
+    usage: /removeroadbuilder
+permissions:
+  default.command.startp:
+    default: true
+  default.command.endp:
+    default: true
+  default.command.stop:
+    default: true
+  default.command.list:
+    default: true
+  default.command.tp:
+    default: true
+  default.command.help:
+    default: true
+  default.command.sell:
+    default: true
+  default.command.give:
+    default: true
+  default.command.mark:
+    default: true
+  default.command.unmark:
+    default: true
+  default.command.info:
+    default: op
+  default.command.here:
+    default: true
+  default.command.buy:
+    default: true
+  command:
+    default: true

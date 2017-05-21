@@ -1,0 +1,62 @@
+---
+1:
+  ID: 1
+  Owner: metowa1227
+  StartX: 230
+  StartY: 5
+  StartZ: 246
+  EndX: 266
+  EndY: 5
+  EndZ: 283
+  Price: 140600
+  Level: world
+  Special: 0
+2:
+  ID: 2
+  Owner: metowa1227
+  StartX: 250
+  StartY: 4
+  StartZ: 252
+  EndX: 261
+  EndY: 4
+  EndZ: 258
+  Price: 8400
+  Level: sigen
+  Special: 0
+3:
+  ID: 3
+  Owner: metowa1227
+  StartX: 251
+  StartY: 4
+  StartZ: 248
+  EndX: 258
+  EndY: 4
+  EndZ: 261
+  Price: 11200
+  Level: sigen
+  Special: 0
+4:
+  ID: 4
+  Owner: metowa1227
+  StartX: 234
+  StartY: 4
+  StartZ: 276
+  EndX: 240
+  EndY: 4
+  EndZ: 279
+  Price: 2800
+  Level: sigen
+  Special: 0
+5:
+  ID: 5
+  Owner: metowa1227
+  StartX: 282
+  StartY: 68
+  StartZ: 291
+  EndX: 323
+  EndY: 68
+  EndZ: 351
+  Price: 256200
+  Level: world
+  Special: 0
+...

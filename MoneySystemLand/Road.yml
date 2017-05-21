@@ -1,0 +1,20 @@
+---
+3:
+  StartX: 254
+  StartZ: 257
+  EndX: 258
+  EndZ: 253
+  Level: lifeworld(1)
+4:
+  StartX: 254
+  StartZ: 257
+  EndX: 258
+  EndZ: 253
+  Level: lifeworld(1)
+5:
+  StartX: 258
+  StartZ: 255
+  EndX: 264
+  EndZ: 258
+  Level: testworld
+...
